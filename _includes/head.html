@@ -1,0 +1,28 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Permanent+Marker&display=swap" />
+
+{% for stylesheet in site.stylesheets %}
+<link rel="stylesheet" href="{{ site.baseurl }}{{ stylesheet }}" />
+{% endfor %}
+
+{% feed_meta %}
+
+{% if site.apple-touch-icon.size > 0 %}
+<link rel="apple-touch-icon" sizes="180x180" href="{{ site.apple-touch-icon }}" />
+{% endif %}
+{% if site.favicon-32.size > 0 %}
+<link rel="icon" type="image/png" sizes="32x32" href="{{ site.favicon-32 }}" />
+{% endif %}
+{% if site.favicon-16.size > 0 %}
+<link rel="icon" type="image/png" sizes="16x16" href="{{ site.favicon-16 }}" />
+{% endif %}
+{% if site.site-manifest.size > 0 %}
+<link rel="manifest" href="{{ site.site-manifest }}" />
+{% endif %}
+
+{% seo title=false %}
+
+<title>{% if page.title.size > 0 %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }} - {{ site.description }}{% endif %}</title>

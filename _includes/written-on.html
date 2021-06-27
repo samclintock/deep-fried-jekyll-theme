@@ -1,0 +1,12 @@
+{% assign author = include.author | default : '' %}
+
+{% if site.written-on.enabled and author.size > 0 %}
+{% assign name = site.data.authors[author].name | default : '' %}
+{% if name.size > 0 %}
+<small>
+    <em>
+        {{ site.written-on.by-text }} {{ name }} {{ site.written-on.on-text }} <time datetime="{{ include.date | date_to_xmlschema }}">{{ include.date | date: "%B" }} {{ include.date | date: "%-d" }}, {{ include.date | date: "%Y" }}</time>
+    </em>
+</small>
+{% endif %}
+{% endif %}

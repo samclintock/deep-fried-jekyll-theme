@@ -1,0 +1,7 @@
+{% assign src = include.src | default : '' %}
+
+{% if src.size > 0 %}
+<section class="iframe-container">
+    <iframe src="{{ src }}" allowfullscreen></iframe>
+</section>
+{% endif %}

@@ -1,0 +1,31 @@
+{% assign title = include.title | default : '' %}
+{% assign url = include.url | default : '' %}
+{% assign icon = include.icon | default : '' %}
+{% assign author = include.author | default : '' %}
+{% assign excerpt = include.excerpt | default : '' %}
+
+{% if title.size > 0 and url.size > 0 and icon.size > 0 and excerpt.size > 0 %}
+<summary class="article">
+    <section class="article-summary-header">
+        {%
+            include icon.html
+            icon=icon
+            alt=title
+        %}
+    
+        <h4>
+            <a href="{{ site.baseurl }}{{ url }}">{{ title }}</a>
+        </h4>
+
+        {%
+            include written-on.html
+            date=include.date
+            author=author
+        %}
+    </section>
+    
+    {% if site.articles.excerpt-enabled %}
+    <p>{{ excerpt | strip_html | normalize_whitespace | truncate: 300 | escape }}{% if site.articles.read-more-enabled %} <a href="{{ site.baseurl }}{{ url }}">{{ site.articles.read-more-text }}</a>{% endif %}</p>
+    {% endif %}
+</summary>
+{% endif %}

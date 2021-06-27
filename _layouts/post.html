@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<article>
+  {% if page.title.size > 0 and page.author.size > 0 %}
+    <section class="page-header">
+      {% if page.icon.size > 0 %}
+        {%
+          include icon.html
+          icon=page.icon
+          alt=page.title
+        %}
+      {% endif %}
+
+      <h1>
+        {{ page.title }}
+      </h1>
+
+      {%
+        include written-on.html
+        date=page.date
+        author=page.author
+      %}
+    </section>
+  {% endif %}
+
+  {{ content }}
+  
+  {% include related-posts.html %}
+</article>

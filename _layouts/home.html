@@ -1,0 +1,55 @@
+---
+layout: default
+---
+
+<article>
+    {% if site.homepage.header-text.size > 0 %}
+    <section class="page-header">
+      <h1>
+        {{ site.homepage.header-text }}
+      </h1>
+    </section>
+    {% endif %}
+
+    {% if site.homepage.intro-text.size > 0 or site.homepage.intro-image.size > 0 %}
+    <section class="text-center">
+        {% if site.homepage.intro-text.size > 0 %}
+        <p>{{ site.homepage.intro-text }}</p>
+        {% endif %}
+
+        {% if site.homepage.intro-image.size > 0 %}
+        {%
+            include image.html
+            file=site.homepage.intro-image
+            alt=site.title
+        %}
+        {% endif %}
+    </section>
+    {% endif %}
+    
+    {% if site.homepage.latest-articles-enabled %}
+    {% if site.homepage.latest-articles-title-text.size > 0 %}
+    <section class="text-center top-bumper bottom-bumper">
+        <h4>{{ site.homepage.latest-articles-title-text }}</h4>
+    </section>
+    {% endif %}
+    
+    {% for post in site.posts limit:3 %}
+        {%
+            include article-summary.html
+            url=post.url
+            title=post.title
+            date=post.date
+            icon=post.icon
+            author=post.author
+            excerpt=post.excerpt
+        %}
+    {% endfor %}
+
+    {% if site.homepage.latest-articles-link-enabled and site.homepage.latest-articles-link-url.size > 0 and site.homepage.latest-articles-link-text.size > 0 %}
+    <section class="text-center top-bumper">
+        <a href="{{ site.baseurl }}{{ site.homepage.latest-articles-link-url }}">{{ site.homepage.latest-articles-link-text }}</a>
+    </section>
+    {% endif %}
+    {% endif %}
+</article>

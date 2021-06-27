@@ -1,0 +1,11 @@
+<footer>
+  <nav>
+    <ul>
+        {% for item in site.footer-menu %}
+        <li><small><a href="{{ item.url }}">{{ item.name }}</a></small></li>
+        {% endfor %}
+    </ul>
+  </nav>
+  
+  <small><em>{{ site.title }} - Powered by <a href="https://jekyllrb.com">Jekyll</a> and the <a href="https://github.com/kiltandcode/deep-fried-jekyll-theme">Deep-fried</a> theme</em></small>
+</footer>

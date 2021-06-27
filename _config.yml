@@ -1,0 +1,101 @@
+# Site settings
+baseurl: ''
+url: 'https://github.com/kiltandcode/deep-fried'
+title: 'Deep-fried'
+description: 'A minimalist Jekyll theme optimized for readability and performance.'
+author: 'Steven McLintock'
+
+# Build settings
+permalink: /:year/:month/:day/:title/
+plugins: [ jekyll-sitemap, jekyll-feed, jekyll-seo-tag ]
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+sass:
+  style: compressed
+
+# Stylesheets
+stylesheets:
+  - '/css/stylesheet.css'
+  - '/css/syntax.css'
+
+# Google Analytics
+google-analytics:
+  enabled: false
+  id: ''
+
+# The primary language used by the website
+language: 'en'
+
+# Favicon and icons for iOS, Android
+# These should ideally be located in the root directory
+apple-touch-icon: '/apple-touch-icon.png'
+favicon-32: '/favicon-32x32.png'
+favicon-16: '/favicon-16x16.png'
+site-manifest: '/site.webmanifest'
+
+# The logo motif
+logo-motif:
+  enabled: true
+  src: '/assets/img/deep-fried-chocolate-motif.png'
+  width: '135'
+  height: '90'
+
+# The logo title
+logo-title:
+  enabled: true
+
+# Header menu
+header-menu:
+- { name: 'Home', url: '/' }
+- { name: 'About', url: '/about' }
+- { name: 'Articles', url: '/articles' }
+
+# Footer menu
+footer-menu:
+- { name: 'Home', url: '/' }
+- { name: 'About', url: '/about' }
+- { name: 'Articles', url: '/articles' }
+- { name: 'RSS', url: '/feed.xml' }
+
+# Homepage
+homepage:
+  header-text: 'Deep-fried is a minimalist Jekyll theme optimized for readability and performance'
+  intro-text: 'Compatible with <a href="https://pages.github.com">GitHub Pages</a>, 
+              <a href="https://github.com/kiltandcode/deep-fried-jekyll-theme">Deep-fried</a> was 
+              created by <a href="http://www.kiltandcode.com">Steven McLintock</a> and is 
+              named after <em>"Scotland’s craziest takeaway"</em>, the delicious and 
+              ridiculously unhealthy 
+              <a href="https://en.wikipedia.org/wiki/Deep-fried_Mars_bar">Deep-fried 
+              Mars bar.</a>'
+  intro-image: 'deep-fried-chocolate.png'
+  latest-articles-enabled: true
+  latest-articles-title-text: 'Latest Articles'
+  latest-articles-link-enabled: true
+  latest-articles-link-url: '/articles'
+  latest-articles-link-text: 'View all articles'
+
+# Articles
+articles:
+  header-text: 'All Articles'
+  excerpt-enabled: true
+  read-more-enabled: true
+  read-more-text: 'Read more'
+
+# Post Icons
+icons:
+  enabled: true
+
+# Related posts (only works if you use tags)
+related-posts:
+  enabled: true
+  header-text: 'More articles like this...'
+  limit: 3
+  no-related-articles-text: 'We couldn''t find any similar articles!'
+
+# Written on (post info displayed underneath the H1)
+written-on:
+  enabled: true
+  by-text: 'By'
+  on-text: 'on'

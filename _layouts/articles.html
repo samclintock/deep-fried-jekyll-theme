@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<article>
+    {% if site.articles.header-text.size > 0 %}
+    <section class="page-header">
+      <h1>
+        {{ site.articles.header-text }}
+      </h1>
+    </section>
+    {% endif %}
+
+    {% for post in site.posts %}
+    {%
+        include article-summary.html
+        url=post.url
+        title=post.title
+        date=post.date
+        icon=post.icon
+        author=post.author
+        excerpt=post.excerpt
+    %}
+    {% endfor %}
+</article>

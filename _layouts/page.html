@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<article>
+  {% if page.title.size > 0 %}
+  <section class="page-header">
+    <h1>
+      {{ page.title }}
+    </h1>
+  </section>
+  {% endif %}
+  
+  {{ content }}
+</article>

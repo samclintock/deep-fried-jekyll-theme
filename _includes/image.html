@@ -1,0 +1,19 @@
+{% assign file = include.file | default : '' %}
+{% assign alt = include.alt | default : '' %}
+{% assign month = include.month | default : '' %}
+{% assign year = include.year | default : '' %}
+{% assign caption = include.caption | default : '' %}
+
+{% if file.size > 0 and alt.size > 0 %}
+<figure class="image">
+{% if month.size > 0 and year.size > 0 %}
+<img src="{{ site.baseurl }}/assets/img/{{ year }}/{{ month }}/{{ file }}" alt="{{ alt }}" />
+{% else %}
+<img src="{{ site.baseurl }}/assets/img/{{ file }}" alt="{{ alt }}" />
+{% endif %}
+
+{% if caption.size > 0 %}
+<figcaption><small><em>{{ caption }}</em></small></figcaption>
+{% endif %}
+</figure>
+{% endif %}
