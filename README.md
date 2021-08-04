@@ -12,12 +12,18 @@ To use the Deep-fried Jekyll theme, simply fork the [GitHub](https://github.com)
 repository located at [github.com/kiltandcode/deep-fried-jekyll-theme](https://github.com/kiltandcode/deep-fried-jekyll-theme) 
 and start modifying the **_config.yml** file. That's it!
 
-Alternatively, if you're using 
-[GitHub Pages](https://github.blog/2017-11-29-use-any-theme-with-github-pages/), you can 
-add the following to your site's **config.yml** file:
+If you would like to run the theme locally, please use the commands:
 
-```yaml
-remote_theme: kiltandcode/deep-fried-jekyll-theme
+**To initially install the required gems:**
+
+```terminal
+bundle install
+```
+
+**Once the required gems are installed, run the website:**
+
+```terminal
+bundle exec jekyll serve
 ```
 
 ## Related Posts
